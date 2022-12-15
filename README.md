@@ -38,7 +38,7 @@ Além disso, foram usados dois servos motores em cada perna, totalizando doze em
 <img src="./Imagens/Mbed.jpg" width="350">
 </p>
 
-Para a implementação, foram utilizadas saídas PWM, informando as posições dos servos, por meio da comunicação serial faz com que os dois microcontroladores se cominuquem da Toradex para os MBEDs conectados aos motores. A principal vantagem da comunicação serial é a diminuição dos gastos para que o sistema continue funcionando. Além disso, a transmissão de dados acontece de forma simplificada, onde é utilizado apenas um canal de comunicação.
+Para a implementação, foram utilizadas saídas PWM para informar as posições dos servos e a comunicação dos microcontroladores (MBEDs) com a Toradex foi feita por meio da comunicação serial. A principal vantagem da comunicação serial é a diminuição dos gastos para que o sistema continue funcionando. Além disso, a transmissão de dados acontece de forma simplificada, onde é utilizado apenas um canal de comunicação.
 
 # Desenvolvimento
 
