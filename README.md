@@ -23,7 +23,7 @@ Estima-se que existam cerca de 18.000 espécies de formigas no mundo, ao final d
 ## Objetivo
 Desenvolver o acionamento e coordenação de múltiplos servo atuadores de aeromodelismo para implementação do padrão de caminhada para um robô de seis pernas.
 
-## Materiais e Método
+## Material e Método
 Utilizou-se um sistema de hardware, o qual consiste em uma placa Toradex Colibri VF61 embarcada na Viola Carrier Board e dois microcontroladores MBED LPC1768. Já o sistema operacional foi o Linux e a linguagem de programação Python. Além disso, foram usados dois servos motores em cada perna, totalizando doze (12).
 
 Para a implementação, foram utilizadas saídas PWM, informando as posições dos servos, por meio da comunicação serial faz com que os dois microcontroladores se cominuquem da Toradex para os MBEDs conectados aos motores. A principal vantagem da comunicação serial é a diminuição dos gastos para que o sistema continue funcionando. Além disso, a transmissão de dados acontece de forma simplificada, onde é utilizado apenas um canal de comunicação.
