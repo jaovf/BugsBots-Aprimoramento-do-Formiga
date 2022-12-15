@@ -40,9 +40,13 @@ Utilizou-se um sistema de hardware, o qual consiste em uma placa Toradex Colibri
 Para a implementação, foram utilizadas saídas PWM, informando as posições dos servos, por meio da comunicação serial faz com que os dois microcontroladores se cominuquem da Toradex para os MBEDs conectados aos motores. A principal vantagem da comunicação serial é a diminuição dos gastos para que o sistema continue funcionando. Além disso, a transmissão de dados acontece de forma simplificada, onde é utilizado apenas um canal de comunicação.
 
 # Desenvolvimento
+
+
 ## Lógica
 
 ## Código
+
+## Instalação do Linux Angstrom na Colibri VF61
 
 ## Conexão SSH
 O SSH pode ser usado para transferência de arquivos criptografados entre seu host e o módulo. Utilizamos o roteiro da Aula 3 (Build, Compile, Link) disponibilizado pelo professor como base para realizar a conexão com a placa Toradex.
@@ -79,9 +83,13 @@ A lógica de caminhada consiste no movimento de 3 patas por vez, sendo elas alte
 
 # Resultados
 
+Inicialmente, foram realizados testes com o robô movendo as pernas em cima de um suporte para evitar a possibilidade do robô quebrar ou ser danificado durante a execução do movimento por possiveis erros na elabnoração do sistema embarcado:
+
+https://user-images.githubusercontent.com/119769311/207974322-b9b8b9bb-30bd-4893-a7dd-93c34144b0fc.mp4
+
+Posteriormente, quando os resultados no suporte se mostraram satisfatórios, colocamos ele no chão e o teste definitivo foi feito:
 
 https://user-images.githubusercontent.com/119769311/207929898-81dae449-8cf5-42a6-8e74-0f024d8560f7.mp4
-
 
 
 # Conclusão
