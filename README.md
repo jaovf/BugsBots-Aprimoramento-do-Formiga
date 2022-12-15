@@ -11,7 +11,7 @@
   
 
 ## Alunos:
-* **Caique Augusto Cerqueira Dioceser** *N° USP: 11232264* 
+* **Caique Augusto Cerqueira Dioceser**  *N° USP: 11232264*
 * **Cristina Luciana Rodrigues Saraiva Leão** *N° USP: 10716696* 
 * **João Vítor Viana Falcão** *N° USP: 11232413* 
 * **Laura Queiroz Soares** *N° USP: 11372625* 
@@ -24,7 +24,7 @@ Estima-se que existam cerca de 18.000 espécies de formigas no mundo, ao final d
 ## Objetivo
 Desenvolver o acionamento e coordenação de múltiplos servo atuadores de aeromodelismo para implementação do padrão de caminhada para um robô de seis pernas.
 
-## Material e Método
+## Materiais e Método
 Utilizou-se um sistema de hardware, o qual consiste em uma placa Toradex Colibri VF61 embarcada na Viola Carrier Board, dois microcontroladores MBED LPC1768, um cartão micro SD, um cabo de adaptador serial RS232 e. Já o sistema operacional utilizado foi o Linux e a linguagem de programação foi Python. Além disso, foram usados dois servos motores em cada perna, totalizando doze.
 
 <p align="center">
@@ -78,11 +78,6 @@ A lógica de caminhada consiste no movimento de 3 patas por vez, sendo elas alte
 
 
 # Resultados
-
-
-
-
-
 
 
 https://user-images.githubusercontent.com/119769311/207929898-81dae449-8cf5-42a6-8e74-0f024d8560f7.mp4
