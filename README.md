@@ -61,6 +61,7 @@ Sabendo o endereço de IP do módulo utilizado (192.168.1.100), podemos realizar
 <p align="left">
      ✔️ Exportar as variáveis para cross-compilation (executar sempre que abrir uma nova aba do terminal para cross-compilation)
 </p>
+
 ```
 >  . /usr/local/oecore-x86_64/environment-setup-armv7at2hf-neon-angstrom-linux-gnueabi
 ```
@@ -68,6 +69,7 @@ Sabendo o endereço de IP do módulo utilizado (192.168.1.100), podemos realizar
 <p align="left">
      ✔️ Enviar o código para Toradex:
 </p>
+
 ```
 > scp codigoARM root@192.168.1.100/home/root
 ```
@@ -75,6 +77,7 @@ Sabendo o endereço de IP do módulo utilizado (192.168.1.100), podemos realizar
 <p align="left">
      ✔️ Em outro terminal, executar o código dentro da Toradex:
 </p>
+
 ```
 > ssh root@192.168.1.100
 > ./codigoARM
