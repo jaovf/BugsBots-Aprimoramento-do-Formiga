@@ -23,10 +23,28 @@ void walk();
 
 int main(){
     
-    while (1) {
-        standard();
-        wait(3);
-        for (int i=0; i<10; i++) walk();
+    toradex.baud(9600);
+    int is_walking = 0;
+    
+    set_period();
+    
+    while(1) {
+        
+        if (toradex.readable()) {
+            if (is_walking == 0){
+                led = 1;
+                is_walking = 1;
+            }
+            else {
+                led = 0;
+                is_walking = 0;
+            }
+        }
+        else standard();
+                
+        if (is_walking == 1) walk();
+        else standard();
+        
     }
     
 }
