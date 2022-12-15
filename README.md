@@ -42,11 +42,6 @@ Para a implementação, foram utilizadas saídas PWM para informar as posições
 
 # Desenvolvimento
 
-
-## Lógica
-
-## Código
-
 ## Instalação do Linux Angstrom na Colibri VF61
 
 ## Conexão SSH
