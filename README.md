@@ -28,6 +28,12 @@ Utilizou-se um sistema de hardware, o qual consiste em uma placa Toradex Colibri
 
 Para a implementação, foram utilizadas saídas PWM, informando as posições dos servos, por meio da comunicação serial faz com que os dois microcontroladores se cominuquem da Toradex para os MBEDs conectados aos motores. A principal vantagem da comunicação serial é a diminuição dos gastos para que o sistema continue funcionando. Além disso, a transmissão de dados acontece de forma simplificada, onde é utilizado apenas um canal de comunicação.
 
+
+<p align="center">
+<img src="./Imagens/Módulo Colibri VF61.jpeg" width ="405" >
+<img src="./Imagens/Placa Viola e MicroSD.jpeg" width="300">
+</p>
+
 # Desenvolvimento
 ## Lógica
 
