@@ -34,6 +34,11 @@ Para a implementação, foram utilizadas saídas PWM, informando as posições d
 <img src="./Imagens/Placa Viola e MicroSD.jpeg" width="300">
 </p>
 
+<p align="center">
+<img src="./Imagens/Placa Viola.jpeg" width ="355" >
+<img src="./Imagens/Mbed.jpg" width="350">
+</p>
+
 # Desenvolvimento
 ## Lógica
 
