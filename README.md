@@ -22,10 +22,11 @@
 Estima-se que existam cerca de 18.000 espécies de formigas no mundo, ao final deste será possível dizer que existe uma espécie nova de formiga, a robótica. Por meio de softwares e hardwares computacionais e mecatrônicos foi desenvolvido um robô de seis pernas capaz de se locomover de forma autônoma. A razão para o desenvolvimento de um robô hexápode é sua facilidade de locomoção em terrenos irregulares, se mantendo mais estável do que em comparação com dispositivos de aplicação parecida compostos por rodas.
 
 ## Objetivo
-Desenvolver o acionamento e coordenação de múltiplos servo atuadores de aeromodelismo para implementação do padrão de caminhada para um robô de seis pernas.
+Desenvolver o acionamento e a coordenação de múltiplos servo atuadores de aeromodelismo para implementação de um padrão de caminhada para um robô de seis pernas.
 
-## Materiais e Método
-Utilizou-se um sistema de hardware, o qual consiste em uma placa Toradex Colibri VF61 embarcada na Viola Carrier Board, dois microcontroladores MBED LPC1768, um cartão micro SD, um cabo de adaptador serial RS232 e. Já o sistema operacional utilizado foi o Linux e a linguagem de programação foi Python. Além disso, foram usados dois servos motores em cada perna, totalizando doze.
+## Materiais e Métodos
+Utilizou-se um sistema de hardware, o qual consiste em uma placa Toradex Colibri VF61 embarcada na Viola Carrier Board, dois microcontroladores MBED LPC1768, um cartão micro SD e um cabo de adaptador serial RS232 para USB-A. Já o sistema operacional utilizado foi o Linux (Ubuntu no host e Angstrom na Colibri) e as linguagens de programação foram Python (VF61) e C (MBED). 
+Além disso, foram usados dois servos motores em cada perna, totalizando doze em todo o robô.
 
 <p align="center">
 <img src="./Imagens/Módulo Colibri VF61.jpeg" width ="405" >
