@@ -74,7 +74,7 @@ Sabendo o endereço de IP do módulo utilizado (192.168.1.103), podemos realizar
 </p>
 
 ```
-> ssh root@192.168.1.100
+> ssh root@192.168.1.103
 > python walk.py
 ```
 
