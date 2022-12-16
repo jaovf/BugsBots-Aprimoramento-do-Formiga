@@ -80,11 +80,11 @@ Uma vez que esse movimento é intercalado, cada MBED está conectado, por meio d
 
 # Resultados
 
-Inicialmente, foram realizados testes com o robô movendo as pernas em cima de um suporte para evitar a possibilidade do robô quebrar ou ser danificado durante a execução do movimento por possiveis erros na elaboração do sistema embarcado:
+Inicialmente, foram realizados testes com o robô movendo as pernas em cima de um suporte para evitar a possibilidade do robô quebrar ou ser danificado durante a execução do movimento por possiveis erros na elaboração do sistema embarcado.
 
 https://user-images.githubusercontent.com/119769311/207974322-b9b8b9bb-30bd-4893-a7dd-93c34144b0fc.mp4
 
-Posteriormente, quando os resultados no suporte se mostraram satisfatórios, colocamos ele no chão e o teste definitivo foi feito:
+Posteriormente, quando os resultados no suporte se mostraram satisfatórios, colocamos ele no chão e o teste definitivo foi feito (sem a comunicação serial com a Toradex, apenas para verificação do funcionamento do padrão de caminhada).
 
 https://user-images.githubusercontent.com/119769311/207929898-81dae449-8cf5-42a6-8e74-0f024d8560f7.mp4
 
