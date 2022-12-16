@@ -54,7 +54,7 @@ Sabendo o endereço de IP do módulo utilizado (192.168.1.103), podemos realizar
 </p>
 
 ```
-> scp walk.py root@192.168.1.100/home/root
+> scp walk.py root@192.168.1.103/home/root
 ```
 
 <p align="left">
