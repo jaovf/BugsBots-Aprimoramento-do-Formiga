@@ -43,7 +43,7 @@ Para a implementação, foram utilizadas saídas PWM para informar as posições
 # Desenvolvimento
 
 ## Instalação do Linux Angstrom na Colibri VF61
-Utilizamos a VF61 como placa de desenvolvimento pela proximidade dos membros do grupo com o laboratório Liepo do Professor Dr. Daniel Varela Magalhães, logo conseguimos emprestado para o projeto de implementação de caminhada para o robô Formiga. Além disso, utilizamos a Carrier Board Iris para esse procedimento, uma vez que ela possui pinos de conexão UART que possibilitam um melhor acompanhamento do processo de reinstalação de SO.
+Utilizamos a VF61 como placa de desenvolvimento pela proximidade dos membros do grupo com o laboratório Liepo do Professor Dr. Daniel Varela Magalhães, logo conseguimos emprestada para o projeto de implementação de caminhada para o robô Formiga. Além disso, utilizamos a Carrier Board Iris para esse procedimento, uma vez que ela possui pinos de conexão UART que possibilitam um melhor acompanhamento do processo de reinstalação de SO.
 No entanto, as placas emprestadas estavam com Windows CE instalado, logo tivemos que seguir o tutorial de "Flashing Embedded Linux to Vybrid Modules" presente no Toradex Develop Center.
 Em primeiro lugar, deve-se instalar algumas aplicações e bibliotecas necessárias para o procedimento.
 
