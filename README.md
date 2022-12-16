@@ -75,7 +75,7 @@ Além disso, vale mencionar que a comunicação serial pela Colibri VF61 foi pos
 ## Controle dos Motores e Padrão de Caminhada
 Para este projeto foram utilizadas duas placas MBED LPC1768, sendo que para cada pata são necessários dois motores para lidar com o movimento horizontal e vertical de cada, totalizando 12 motores no projeto. Desta forma, cada MBED fica responsável pelo controle de 6 motores, ou seja, 3 pernas.
 A lógica de caminhada consiste no movimento de 3 patas por vez, sendo elas alternadas (2 nas pontas de um lado e 1 no meio do outro lado), de forma que as outras 3 permaneçam no chão durante esse tempo para maior estabilidade da formiga. 
-Uma vez que esse movimento é intercalado, cada MBED está conectado, por meio de portas PWM, a um conjunto de pernas (6 motores) que se movimentam ao mesmo tempo. O controle dos motores é feito através das portas PWM, por meio de códigos que foram escritos diretamente nos microcontroladores. A lógica de caminhada pode ser vista no diagrama a seguir.  
+Uma vez que esse movimento é intercalado, cada MBED está conectado, por meio de portas PWM, a um conjunto de pernas (6 motores) que se movimentam ao mesmo tempo. O controle dos motores é feito através das portas PWM, por meio de códigos que foram escritos diretamente nos microcontroladores. 
 
 
 # Resultados
