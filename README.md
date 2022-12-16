@@ -43,6 +43,42 @@ Para a implementação, foram utilizadas saídas PWM para informar as posições
 # Desenvolvimento
 
 ## Instalação do Linux Angstrom na Colibri VF61
+Utilizamos a VF61 como placa de desenvolvimento pela proximidade dos membros do grupo com o laboratório Liepo do Professor Dr. Daniel Varela Magalhães, logo conseguimos emprestado para o projeto de implementação de caminhada para o robô Formiga. 
+No entanto, as placas emprestadas estavam com Windows CE instalado, logo tivemos que seguir o tutorial de "Flashing Embedded Linux to Vybrid Modules" presente no Toradex Develop Center.
+Em primeiro lugar, deve-se instalar algumas aplicações e bibliotecas necessárias para o procedimento.
+
+```
+> sudo apt-get update
+> sudo apt-get install dosfstools e2fsprogs gawk mtools parted
+> sudo apt-get install zlib1g liblzo2-2 libuuid1 libusb-1.0-0
+```
+
+Em seguida, baixa-se a imagem de instalação do Linux Angstrom (pasta deve ser extraída com root permissions). 
+Executa-se o programa ./update.sh com o ponto de montagem do cartão Micro SD como argumento de destino.
+Lembrando que o ponto de montagem do cartão micro SD pode ser encontrado com o comando "lsblk" executado direto pelo terminal do host.
+
+```
+> ./update.sh -o /media/KERNEL/
+```
+
+Após esse passo, o cartão micro SD está carregado com o U-Boot, necessário para a instalação do SO Angstrom na placa Colibri.
+Como a placa utilizada no projeto possuía Windows CE anteriormente, seguimos a parte do tutorial relacionada com "Flashins image using Eboot (WinCE)", executando os seguintes comandos após entrar no prompt de comando.
+
+
+```
+> flashloader colibri_vf/u-boot-nand.imx
+> reboot
+```
+
+Após o reboot, é necessário rodar os seguintes comandos para a instalação do novo sistema operacional na VF61.
+
+```
+Colibri VFxx # nand erase.part ubi
+...
+Colibri VFxx # run setupdate
+...
+Colibri VFxx # run update
+```
 
 ## Conexão SSH
 O SSH pode ser usado para transferência de arquivos criptografados entre seu host e o módulo. Utilizamos o roteiro da Aula 3 (Build, Compile, Link) disponibilizado pelo professor como base para realizar a conexão com a placa Toradex.
