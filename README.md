@@ -80,6 +80,8 @@ Colibri VFxx # run setupdate
 Colibri VFxx # run update
 ```
 
+Com esse processo, foi possível instalar com sucesso o Linux Angstrom na placa Colibri VF61, o que possibilitou o uso da comunicação ssh, permitindo a continuação do projeto.
+
 ## Conexão SSH
 O SSH pode ser usado para transferência de arquivos criptografados entre seu host e o módulo. Utilizamos o roteiro da Aula 3 (Build, Compile, Link) disponibilizado pelo professor como base para realizar a conexão com a placa Toradex.
 
