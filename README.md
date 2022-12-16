@@ -50,18 +50,6 @@ O SSH pode ser usado para transferência de arquivos criptografados entre seu ho
 Sabendo o endereço de IP do módulo utilizado (192.168.1.103), podemos realizar a conexão por meio das seguintes etapas:
 
 <p align="left">
-     ✔️ Verificar se o SDK está instalado
-</p>
-
-<p align="left">
-     ✔️ Exportar as variáveis para cross-compilation (executar sempre que abrir uma nova aba do terminal para cross-compilation)
-</p>
-
-```
->  . /usr/local/oecore-x86_64/environment-setup-armv7at2hf-neon-angstrom-linux-gnueabi
-```
-
-<p align="left">
      ✔️ Enviar o código para Toradex:
 </p>
 
