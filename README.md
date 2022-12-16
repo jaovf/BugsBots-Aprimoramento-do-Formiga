@@ -71,7 +71,7 @@ Como a placa utilizada no projeto possuía Windows CE anteriormente, seguimos a 
 > reboot
 ```
 
-Após o reboot, é necessário rodar os seguintes comandos para a instalação do novo sistema operacional na VF61.
+Após o reboot, é necessário rodar os procedimentos a seguir para a instalação do novo sistema operacional na VF61.
 
 ```
 Colibri VFxx # nand erase.part ubi
