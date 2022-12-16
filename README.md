@@ -47,7 +47,7 @@ Para a implementação, foram utilizadas saídas PWM para informar as posições
 ## Conexão SSH
 O SSH pode ser usado para transferência de arquivos criptografados entre seu host e o módulo. Utilizamos o roteiro da Aula 3 (Build, Compile, Link) disponibilizado pelo professor como base para realizar a conexão com a placa Toradex.
 
-Sabendo o endereço de IP do módulo utilizado (192.168.1.100), podemos realizar a conexão por meio das seguintes etapas:
+Sabendo o endereço de IP do módulo utilizado (192.168.1.103), podemos realizar a conexão por meio das seguintes etapas:
 
 <p align="left">
      ✔️ Verificar se o SDK está instalado
@@ -66,7 +66,7 @@ Sabendo o endereço de IP do módulo utilizado (192.168.1.100), podemos realizar
 </p>
 
 ```
-> scp codigoARM root@192.168.1.100/home/root
+> scp walk.py root@192.168.1.100/home/root
 ```
 
 <p align="left">
@@ -75,7 +75,7 @@ Sabendo o endereço de IP do módulo utilizado (192.168.1.100), podemos realizar
 
 ```
 > ssh root@192.168.1.100
-> ./codigoARM
+> python walk.py
 ```
 
 ## Comunicação Serial Toradex - Mbed
