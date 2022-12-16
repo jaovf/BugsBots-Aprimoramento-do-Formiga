@@ -63,7 +63,7 @@ Lembrando que o ponto de montagem do cartão micro SD pode ser encontrado com o 
 ```
 
 Após esse passo, o cartão micro SD está carregado com o U-Boot, necessário para a instalação do SO Angstrom na placa Colibri.
-Como a placa utilizada no projeto possuía Windows CE anteriormente, seguimos a parte do tutorial relacionada com "Flashins image using Eboot (WinCE)", executando os seguintes comandos após entrar no prompt de comando.
+Como a placa utilizada no projeto possuía Windows CE anteriormente, seguimos a parte do tutorial relacionada com "Flashing image using Eboot (WinCE)", executando os seguintes comandos após entrar no prompt de comando.
 
 
 ```
