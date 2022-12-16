@@ -68,8 +68,7 @@ Sabendo o endereço de IP do módulo utilizado (192.168.1.103), podemos realizar
 
 ## Comunicação Serial Toradex - Mbed
 Para a comunicação da Toradex com os microcontroladores MBEDs, optamos pela comunicação serial por ser mais simples e também devido à inexperiência dos integrantes do grupo com o protocolo CAN.  
-A placa Viola é conectada às 2 MBEDs por meio de portas USB, de modo que ela  envia uma mensagem de caminhada a uma das portas fazendo com que um dos controladores receba e interprete o sinal (traduzem a mensagem), executando o movimento desejado. Uma vez que o movimento das patas é alternado (lógica de movimento explicado mais adiante), apenas um controlador recebe a mensagem por vez, de modo que o controlador que não recebe nada se mantém parado.
-Idealmente, ambos os controladores estariam recebendo o sinal, de maneira que um conjunto de pernas se manteria parado enquanto o outro se movimenta, e no sinal seguinte haveria a inversão de ações (parado/movimentando) nos conjuntos. Todavia, não foi possível fazer funcionar na prática, logo optamos pela comunicação de apenas um controlador por vez.
+A placa Viola é conectada às 2 MBEDs por meio de portas USB, de modo que ela  envia uma mensagem de caminhada às duas portas fazendo com que os dois controladores recebam e interpretem o sinal (traduzam a mensagem), executando o movimento desejado. Uma vez que o movimento das patas é alternado (lógica de movimento explicado mais adiante).
 
 
 
