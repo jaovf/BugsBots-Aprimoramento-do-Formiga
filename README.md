@@ -80,17 +80,13 @@ O SSH pode ser usado para transferência de arquivos criptografados entre seu ho
 
 Sabendo o endereço de IP do módulo utilizado (192.168.1.103), podemos realizar a conexão por meio das seguintes etapas:
 
-<p align="left">
-     ✔️ Enviar o código para Toradex:
-</p>
+Enviar o código para Toradex:
 
 ```
 > scp walk.py root@192.168.1.103/home/root
 ```
 
-<p align="left">
-     ✔️ Em outro terminal, executar o código dentro da Toradex:
-</p>
+ Em outro terminal, executar o código dentro da Toradex:
 
 ```
 > ssh root@192.168.1.103
