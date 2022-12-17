@@ -25,16 +25,16 @@ Estima-se que existam cerca de 18.000 espécies de formigas no mundo, ao final d
 Desenvolver o acionamento e a coordenação de múltiplos servo atuadores de aeromodelismo para implementação de um padrão de caminhada para um robô de seis pernas.
 
 ## Materiais e Métodos
-Utilizou-se um sistema de hardware, o qual consiste em uma placa Toradex Colibri VF61 embarcada na Viola Carrier Board, dois microcontroladores MBED LPC1768, um cartão micro SD e um cabo de adaptador serial RS232 para USB-A. Já o sistema operacional utilizado foi o Linux (Ubuntu no host e Angstrom na Colibri) e as linguagens de programação foram Python (VF61) e C (MBED). 
-Além disso, foram usados dois servos motores em cada perna, totalizando doze em todo o robô.
+Utilizou-se um sistema de hardware, o qual consiste em uma placa Toradex Colibri VF61 embarcada na Viola Carrier Board e dois microcontroladores MBED LPC1768 pela proximidade dos membros do grupo com o laboratório Liepo do Professor Dr. Daniel Varela Magalhães, logo conseguimos esses itens emprestados para o projeto de implementação de caminhada para o robô Formiga. Além disso, foi necessário uma Carrier Board Iris, um cartão micro SD e um cabo de adaptador serial RS232 para USB-A para instalação do sistema operacional na Toradex Colibri VF61, o qual utilizamos o Linux (Ubuntu no host e Angstrom na Colibri). Já as linguagens de programação foram Python (VF61) e C++ (MBED). 
+Além disso, foram usados 2 servos motores em cada perna, totalizando 12 em todo no robô.
 
 <p align="center">
-<img src="./Imagens/Módulo Colibri VF61.jpeg" width ="405" >
+<img src="./Imagens/Módulo Colibri VF61.jpeg" width ="400">
 <img src="./Imagens/Placa Viola e MicroSD.jpeg" width="300">
 </p>
 
 <p align="center">
-<img src="./Imagens/Placa Viola.jpeg" width ="355" >
+<img src="./Imagens/Placa Viola.jpeg" width ="350">
 <img src="./Imagens/Mbed.jpg" width="350">
 </p>
 
@@ -43,8 +43,8 @@ Para a implementação, foram utilizadas saídas PWM para informar as posições
 # Desenvolvimento
 
 ## Instalação do Linux Angstrom na Colibri VF61
-Utilizamos a VF61 como placa de desenvolvimento pela proximidade dos membros do grupo com o laboratório Liepo do Professor Dr. Daniel Varela Magalhães, logo conseguimos emprestada para o projeto de implementação de caminhada para o robô Formiga. Além disso, utilizamos a Carrier Board Iris para esse procedimento, uma vez que ela possui pinos de conexão UART que possibilitam um melhor acompanhamento do processo de reinstalação de SO.
-No entanto, as placas emprestadas estavam com Windows CE instalado, logo tivemos que seguir o tutorial de "Flashing Embedded Linux to Vybrid Modules" presente no Toradex Develop Center.
+Utilizamos a VF61 como placa de desenvolvimento juntamente com a Carrier Board Viola já que era a proposta da disciplina, porém utilizamos a Carrier Board Iris para instalação do Linux Angstrom, uma vez que ela possui pinos de conexão UART que possibilitam um melhor acompanhamento do processo de reinstalação de SO.
+No entanto, a placa emprestada estava com Windows CE instalado, logo tivemos que seguir o tutorial de "Flashing Embedded Linux to Vybrid Modules" presente no Toradex Develop Center.
 
 Em primeiro lugar, deve-se instalar algumas aplicações e bibliotecas necessárias para o procedimento.
 
@@ -110,34 +110,50 @@ Para a comunicação da Toradex com os microcontroladores MBEDs, optamos pela co
 A placa Viola é conectada às 2 MBEDs por meio de portas USB, de modo que ela envia uma mensagem de caminhada às duas portas fazendo com que os dois controladores recebam e interpretem o sinal (traduzam a mensagem), executando o movimento desejado. 
 Além disso, vale mencionar que a comunicação serial pela Colibri VF61 foi possível por meio da instalação da biblioteca pyserial, permitindo o envio de informações para as MBEDs por meio da execução de um código em python de conexão serial.
 
-Já na mbed, foi necessário especificar a porta serial utilizada (USB Serial), já que ela possui outras três, por meio da identificação no código.
+"Falar sobre o passo a passo da intalção da biblioteca"
+
+Dessa forma, implementamos um código simples em python que acessa as portas seriais USB da Colibri VF61 e envia uma mensagem para cada mbed.
 
 ```
-> // Serial port
-> Serial  toradex(USBTX, USBRX);  // tx, rx
+     ser1 = serial.Serial("/dev/serial/by-id/usb-mbed_Microcontroller_101000000000000000000002F7F0C7A2-if01")
+     ser2 = serial.Serial("/dev/serial/by-id/usb-mbed_Microcontroller_101000000000000000000002F7F1EA94-if01")
+
+     ser1.write(1)
+     ser2.write(1)
 ```
 
-Assim, dentro do loop da função principal era verificado a disponibilidade de leitura dessa porta e ao receber uma mensagem era acionado o restante do código.
+Já na mbed, especificamos a porta serial utilizada (USB Serial), por meio da identificação no código e dentro do loop da função principal era verificado a disponibilidade de leitura dessa porta que ao receber uma mensagem acionava o restante do código.
 
 ```
-while(1) {
+// Serial port
+Serial  toradex(USBTX, USBRX);  // tx, rx
 
-     if (toradex.readable()) {
-     ....
-     }
+...
+
+     while(1) {
+
+          if (toradex.readable()) {
+
+          ....
+
+          }
 ```
+
+<p align="center">
+<img src="./Imagens/máquina_de_estados_mbed.png" width ="400" >
+</p>
 
 ## Controle dos Motores e Padrão de Caminhada
 Para este projeto foram utilizadas duas placas MBED LPC1768, sendo que para cada pata são necessários dois motores para lidar com o movimento horizontal e vertical, totalizando 12 servomotores no projeto. Desta forma, cada MBED fica responsável pelo controle de 6 motores, ou seja, 3 pernas, já que cada placa possui 6 pinos de controle PWM.
 
 <p align="center">
-<img src="./Imagens/lpc1768_pinout.png" width ="405" >
+<img src="./Imagens/lpc1768_pinout.png" width ="400" >
 </p>
 
 A lógica de caminhada consiste no movimento de 3 patas por vez, sendo elas alternadas (2 nas pontas de um lado e 1 no meio do outro lado), de forma que as outras 3 permaneçam no chão durante esse tempo. Esse padrão de caminhada foi adotado devido a semelhança com a movimentação de insetos que também possuém 6 patas e por permitir uma maior estabilidade do robô.
 
 <p align="center">
-<img src="./Imagens/Make-a-Hexapod-Walking-Robot-With-Raspberry-Pi-2.gif" width ="405" >
+<img src="./Imagens/Make-a-Hexapod-Walking-Robot-With-Raspberry-Pi-2.gif" width ="400" >
 </p>
 
 Uma vez que esse movimento é intercalado, cada MBED está conectado a um conjunto de pernas (6 motores) que se movimentam ao mesmo tempo e o controle dos motores é feito através do códigos que foram escritos diretamente nos microcontroladores. Para essa implementação, foi utilizado a própria interface de desenvolvimento da MBED, o mbed Compiler, que pode ser acesado diretamente do sites deles, o que facilita trabalhar com as bibliotecas necessásrias para o desenvolvimento do projeto. Desta forma, basta declarar as portas nas quais os moteres estão conectados, o período e o tamanho do pulso PWM (correspondente ao angulo desejado)para realizar o movimento.
