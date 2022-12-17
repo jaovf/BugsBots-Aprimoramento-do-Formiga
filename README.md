@@ -73,11 +73,11 @@ Como a placa utilizada no projeto possuía Windows CE anteriormente, seguimos a 
 Após o reboot, é necessário rodar os procedimentos a seguir para a instalação do novo sistema operacional na VF61.
 
 ```
-Colibri VFxx # nand erase.part ubi
+> Colibri VFxx # nand erase.part ubi
 ...
-Colibri VFxx # run setupdate
+> Colibri VFxx # run setupdate
 ...
-Colibri VFxx # run update
+> Colibri VFxx # run update
 ```
 
 Com esse processo, foi possível instalar com sucesso o Linux Angstrom na placa Colibri VF61, o que possibilitou o uso da comunicação ssh, permitindo a continuação do projeto.
