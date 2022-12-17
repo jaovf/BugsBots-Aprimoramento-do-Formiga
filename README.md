@@ -107,14 +107,34 @@ Sabendo o endereço de IP do módulo utilizado (192.168.1.103), podemos realizar
 
 ## Comunicação Serial Toradex - Mbed
 Para a comunicação da Toradex com os microcontroladores MBEDs, optamos pela comunicação serial por ser mais simples e também devido à inexperiência dos integrantes do grupo com o protocolo CAN.  
-A placa Viola é conectada às 2 MBEDs por meio de portas USB, de modo que ela  envia uma mensagem de caminhada às duas portas fazendo com que os dois controladores recebam e interpretem o sinal (traduzam a mensagem), executando o movimento desejado. 
+A placa Viola é conectada às 2 MBEDs por meio de portas USB, de modo que ela envia uma mensagem de caminhada às duas portas fazendo com que os dois controladores recebam e interpretem o sinal (traduzam a mensagem), executando o movimento desejado. 
 Além disso, vale mencionar que a comunicação serial pela Colibri VF61 foi possível por meio da instalação da biblioteca pyserial, permitindo o envio de informações para as MBEDs por meio da execução de um código em python de conexão serial.
 
+Já na mbed, foi necessário especificar a porta serial utilizada (USB Serial), já que ela possui outras três, por meio da identificação no código.
+
+```
+> // Serial port
+> Serial  toradex(USBTX, USBRX);  // tx, rx
+```
+
+Assim, dentro do loop da função principal era verificado a disponibilidade de leitura dessa porta e ao receber uma mensagem era acionado o restante do código.
+
+```
+> while(1) {
+>    if (toradex.readable()) {
+>    ...
+>    }
+```
 
 ## Controle dos Motores e Padrão de Caminhada
-Para este projeto foram utilizadas duas placas MBED LPC1768, sendo que para cada pata são necessários dois motores para lidar com o movimento horizontal e vertical de cada, totalizando 12 motores no projeto. Desta forma, cada MBED fica responsável pelo controle de 6 motores, ou seja, 3 pernas.
-A lógica de caminhada consiste no movimento de 3 patas por vez, sendo elas alternadas (2 nas pontas de um lado e 1 no meio do outro lado), de forma que as outras 3 permaneçam no chão durante esse tempo para maior estabilidade da formiga. 
-Uma vez que esse movimento é intercalado, cada MBED está conectado, por meio de portas PWM, a um conjunto de pernas (6 motores) que se movimentam ao mesmo tempo. O controle dos motores é feito através dessas portas, por meio de códigos que foram escritos diretamente nos microcontroladores. 
+Para este projeto foram utilizadas duas placas MBED LPC1768, sendo que para cada pata são necessários dois motores para lidar com o movimento horizontal e vertical, totalizando 12 servomotores no projeto. Desta forma, cada MBED fica responsável pelo controle de 6 motores, ou seja, 3 pernas, já que cada placa possui 6 pinos de controle PWM.
+A lógica de caminhada consiste no movimento de 3 patas por vez, sendo elas alternadas (2 nas pontas de um lado e 1 no meio do outro lado), de forma que as outras 3 permaneçam no chão durante esse tempo. Esse padrão de caminhada foi adotado devido a semelhança com a movimentação de insetos que também possuém 6 patas e por permitir uma maior estabilidade do robô.
+
+
+Uma vez que esse movimento é intercalado, cada MBED está conectado, por meio de portas PWM, a um conjunto de pernas (6 motores) que se movimentam ao mesmo tempo. O controle dos motores é feito através dessas portas e da biblioteca , por meio de códigos que foram escritos diretamente nos microcontroladores. 
+Para implementação do código foi utilizado a própria interface de desenvolvimento da MBED, o mbed Compiler, que pode ser acesado diretamente do sites deles, o que facilita trabalhar com as bibliotecas necessásrias para o desenvolvimento do projeto.
+
+
 
 
 # Resultados
