@@ -138,7 +138,7 @@ A lógica de caminhada consiste no movimento de 3 patas por vez, sendo elas alte
 <img src="./Imagens/Make-a-Hexapod-Walking-Robot-With-Raspberry-Pi-2.gif" width ="400" >
 </p>
 
-Uma vez que esse movimento é intercalado, cada MBED está conectado a um conjunto de pernas (6 motores) que se movimentam ao mesmo tempo e o controle dos motores é feito através do códigos que foram escritos diretamente nos microcontroladores. Para essa implementação, foi utilizado a própria interface de desenvolvimento da MBED, o mbed Compiler, que pode ser acesado diretamente do sites deles, o que facilita trabalhar com as bibliotecas necessásrias para o desenvolvimento do projeto. Desta forma, basta declarar as portas nas quais os moteres estão conectados, o período e o tamanho do pulso PWM (correspondente ao angulo desejado)para realizar o movimento.
+Uma vez que esse movimento é intercalado, cada MBED está conectado a um conjunto de pernas (6 motores) que se movimentam ao mesmo tempo e o controle dos motores é feito através do códigos que foram escritos diretamente nos microcontroladores. Para essa implementação, foi utilizado a própria interface de desenvolvimento da MBED, o mbed Compiler, que pode ser acesado diretamente do sites deles, o que facilita trabalhar com as bibliotecas necessásrias para o desenvolvimento do projeto. Desta forma, basta declarar as portas nas quais os moteres estão conectados, o período e o tamanho do pulso PWM (correspondente ao angulo desejado) para realizar o movimento.
 
 ```
 // PWM pins
