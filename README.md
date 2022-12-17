@@ -96,7 +96,21 @@ Enviar o código para Toradex:
 ## Comunicação Serial Toradex - Mbed
 Para a comunicação da Toradex com os microcontroladores MBEDs, optamos pela comunicação serial por ser mais simples e também devido à inexperiência dos integrantes do grupo com o protocolo CAN. Por isso, a placa Viola é conectada às 2 MBEDs por meio de portas USB, de modo que ela envia uma mensagem de caminhada às duas portas fazendo com que os dois controladores recebam e interpretem o sinal (traduzam a mensagem), executando o movimento desejado. Além disso, vale mencionar que a comunicação serial pela Colibri VF61 foi possível por meio da instalação da biblioteca pyserial, permitindo o envio de informações para as MBEDs por meio da execução de um código em python de conexão serial.
 
-"Falar sobre o passo a passo da intalção da biblioteca"
+Em primeiro lugar, foi necessário instalar a interpretação de códigos em python na Colibri VF61. Juntamente com esse passo, foi instalado a ferramenta "pip", o que permitiu a importação da biblioteca de comunicação serial em python (pyserial). Vale ressaltar que a biblioteca foi importada para a versão de python 2 presente na placa, o que não alterou o uso das funções desejadas. Os passos a seguir demonstram o processo de instalação realizado.
+
+```
+opkg update
+opkg install python
+opkg install python-pip
+pip install serial
+pip install pyserial
+```
+
+opkg update
+opkg install python
+opkg install pyhton-pip
+pip install serial
+pip install pyseria
 
 Dessa forma, implementamos um código simples em python que acessa as portas seriais USB da Colibri VF61 e envia uma mensagem para cada mbed.
 
@@ -138,7 +152,7 @@ A lógica de caminhada consiste no movimento de 3 patas por vez, sendo elas alte
 <img src="./Imagens/Make-a-Hexapod-Walking-Robot-With-Raspberry-Pi-2.gif" width ="400" >
 </p>
 
-Uma vez que esse movimento é intercalado, cada MBED está conectado a um conjunto de pernas (6 motores) que se movimentam ao mesmo tempo e o controle dos motores é feito através do códigos que foram escritos diretamente nos microcontroladores. Para essa implementação, foi utilizado a própria interface de desenvolvimento da MBED, o mbed Compiler, que pode ser acesado diretamente do sites deles, o que facilita trabalhar com as bibliotecas necessásrias para o desenvolvimento do projeto. Desta forma, basta declarar as portas nas quais os moteres estão conectados, o período e o tamanho do pulso PWM (correspondente ao angulo desejado) para realizar o movimento.
+Uma vez que esse movimento é intercalado, cada MBED está conectada a um conjunto de pernas (6 motores) que se movimentam ao mesmo tempo e o controle dos motores é feito através do códigos que foram escritos diretamente nos microcontroladores. Para essa implementação, foi utilizada a própria interface de desenvolvimento da MBED, o mbed Compiler, que pode ser acessado diretamente do site deles, o que facilita trabalhar com as bibliotecas necessárias para o desenvolvimento do projeto. Desta forma, basta declarar as portas nas quais os moteres estão conectados, o período e o tamanho do pulso PWM (correspondente ao ângulo desejado) para realizar o movimento.
 
 ```
 // PWM pins
