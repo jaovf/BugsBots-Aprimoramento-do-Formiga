@@ -139,7 +139,7 @@ Serial  toradex(USBTX, USBRX);  // tx, rx
 ```
 
 <p align="center">
-<img src="./Imagens/máquina_de_estados_mbed.png" width ="400" >
+<img src="./Imagens/máquina_de_estados_mbed.jpg" width ="400" >
 </p>
 
 ## Controle dos Motores e Padrão de Caminhada
