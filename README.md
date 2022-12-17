@@ -8,7 +8,6 @@
   Ministrante: Prof. Dr. Glauco Augusto de Paula Caurin
   
   Departamento de Engenharia Aeronáutica
-  
 
 ## Alunos:
 * **Caique Augusto Cerqueira Dioceser**  *N° USP: 11232264*
@@ -16,7 +15,6 @@
 * **João Vítor Viana Falcão** *N° USP: 11232413* 
 * **Laura Queiroz Soares** *N° USP: 11372625* 
 * **Natthan Wictor de Camargo** *N° USP: 11352702* 
-
 
 # Introdução
 Estima-se que existam cerca de 18.000 espécies de formigas no mundo, ao final deste será possível dizer que existe uma espécie nova de formiga, a robótica. Por meio de softwares e hardwares computacionais e mecatrônicos foi desenvolvido um robô de seis pernas capaz de se locomover de forma autônoma. A razão para o desenvolvimento de um robô hexápode é sua facilidade de locomoção em terrenos irregulares, se mantendo mais estável do que em comparação com dispositivos de aplicação parecida compostos por rodas.
@@ -42,8 +40,7 @@ Para a implementação, foram utilizadas saídas PWM para informar as posições
 # Desenvolvimento
 
 ## Instalação do Linux Angstrom na Colibri VF61
-Utilizamos a VF61 como placa de desenvolvimento juntamente com a Carrier Board Viola já que era a proposta da disciplina, porém utilizamos a Carrier Board Iris para instalação do Linux Angstrom, uma vez que ela possui pinos de conexão UART que possibilitam um melhor acompanhamento do processo de reinstalação de SO.
-No entanto, a placa emprestada estava com Windows CE instalado, logo tivemos que seguir o tutorial de "Flashing Embedded Linux to Vybrid Modules" presente no Toradex Develop Center.
+Utilizamos a VF61 como placa de desenvolvimento juntamente com a Carrier Board Viola já que era a proposta da disciplina, porém utilizamos a Carrier Board Iris para instalação do Linux Angstrom, uma vez que ela possui pinos de conexão UART que possibilitam um melhor acompanhamento do processo de reinstalação de SO. No entanto, a placa emprestada estava com Windows CE instalado, logo tivemos que seguir o tutorial de "Flashing Embedded Linux to Vybrid Modules" presente no Toradex Develop Center.
 
 Em primeiro lugar, deve-se instalar algumas aplicações e bibliotecas necessárias para o procedimento.
 
@@ -53,17 +50,13 @@ Em primeiro lugar, deve-se instalar algumas aplicações e bibliotecas necessár
 > sudo apt-get install zlib1g liblzo2-2 libuuid1 libusb-1.0-0
 ```
 
-Em seguida, baixa-se a imagem de instalação do Linux Angstrom (pasta deve ser extraída com root permissions). 
-Executa-se o programa ./update.sh com o ponto de montagem do cartão Micro SD como argumento de destino.
-Lembrando que o ponto de montagem do cartão micro SD pode ser encontrado com o comando "lsblk" executado direto pelo terminal do host.
+Em seguida, baixa-se a imagem de instalação do Linux Angstrom (pasta deve ser extraída com root permissions). Executa-se o programa ./update.sh com o ponto de montagem do cartão Micro SD como argumento de destino, lembrando que o ponto de montagem do cartão micro SD pode ser encontrado com o comando "lsblk" executado direto pelo terminal do host.
 
 ```
 > ./update.sh -o /media/KERNEL/
 ```
 
-Após esse passo, o cartão micro SD está carregado com o U-Boot, necessário para a instalação do SO Angstrom na placa Colibri.
-Como a placa utilizada no projeto possuía Windows CE anteriormente, seguimos a parte do tutorial relacionada com "Flashing image using Eboot (WinCE)", executando os seguintes comandos após entrar no prompt de comando.
-
+Após esse passo, o cartão micro SD está carregado com o U-Boot, necessário para a instalação do SO Angstrom na placa Colibri. Como a placa utilizada no projeto possuía Windows CE anteriormente, seguimos a parte do tutorial relacionada com "Flashing image using Eboot (WinCE)", executando os seguintes comandos após entrar no prompt de comando.
 
 ```
 > flashloader colibri_vf/u-boot-nand.imx
@@ -105,9 +98,7 @@ Sabendo o endereço de IP do módulo utilizado (192.168.1.103), podemos realizar
 ```
 
 ## Comunicação Serial Toradex - Mbed
-Para a comunicação da Toradex com os microcontroladores MBEDs, optamos pela comunicação serial por ser mais simples e também devido à inexperiência dos integrantes do grupo com o protocolo CAN.  
-A placa Viola é conectada às 2 MBEDs por meio de portas USB, de modo que ela envia uma mensagem de caminhada às duas portas fazendo com que os dois controladores recebam e interpretem o sinal (traduzam a mensagem), executando o movimento desejado. 
-Além disso, vale mencionar que a comunicação serial pela Colibri VF61 foi possível por meio da instalação da biblioteca pyserial, permitindo o envio de informações para as MBEDs por meio da execução de um código em python de conexão serial.
+Para a comunicação da Toradex com os microcontroladores MBEDs, optamos pela comunicação serial por ser mais simples e também devido à inexperiência dos integrantes do grupo com o protocolo CAN. Por isso, a placa Viola é conectada às 2 MBEDs por meio de portas USB, de modo que ela envia uma mensagem de caminhada às duas portas fazendo com que os dois controladores recebam e interpretem o sinal (traduzam a mensagem), executando o movimento desejado. Além disso, vale mencionar que a comunicação serial pela Colibri VF61 foi possível por meio da instalação da biblioteca pyserial, permitindo o envio de informações para as MBEDs por meio da execução de um código em python de conexão serial.
 
 "Falar sobre o passo a passo da intalção da biblioteca"
 
@@ -137,10 +128,6 @@ Serial  toradex(USBTX, USBRX);  // tx, rx
 
           }
 ```
-
-<p align="center">
-<img src="./Imagens/máquina_de_estados_mbed.jpg" width ="400" >
-</p>
 
 ## Controle dos Motores e Padrão de Caminhada
 Para este projeto foram utilizadas duas placas MBED LPC1768, sendo que para cada pata são necessários dois motores para lidar com o movimento horizontal e vertical, totalizando 12 servomotores no projeto. Desta forma, cada MBED fica responsável pelo controle de 6 motores, ou seja, 3 pernas, já que cada placa possui 6 pinos de controle PWM.
@@ -172,6 +159,12 @@ perna1.period(0.020);
 coxa1.pulsewidth(0.0013);
 perna1.pulsewidth(0.0017);
 ```
+
+Dessa forma, a lógica estabelecida verifica a possibilidade de leitura da porta Serial e ao rebecer uma mensagem, verifica em qual estado o robô se encontra, andando ou estático, e alterna entre esses estados a cada vez que tem uma chamada na porta Serial.
+
+<p align="center">
+<img src="./Imagens/máquina_de_estados_mbed.jpg" width ="400" >
+</p>
 
 # Resultados
 
