@@ -99,18 +99,12 @@ Para a comunicação da Toradex com os microcontroladores MBEDs, optamos pela co
 Em primeiro lugar, foi necessário instalar a interpretação de códigos em python na Colibri VF61. Juntamente com esse passo, foi instalado a ferramenta "pip", o que permitiu a importação da biblioteca de comunicação serial em python (pyserial). Vale ressaltar que a biblioteca foi importada para a versão de python 2 presente na placa, o que não alterou o uso das funções desejadas. Os passos a seguir demonstram o processo de instalação realizado.
 
 ```
-opkg update
-opkg install python
-opkg install python-pip
-pip install serial
-pip install pyserial
+> opkg update
+> opkg install python
+> opkg install python-pip
+> pip install serial
+> pip install pyserial
 ```
-
-opkg update
-opkg install python
-opkg install pyhton-pip
-pip install serial
-pip install pyseria
 
 Dessa forma, implementamos um código simples em python que acessa as portas seriais USB da Colibri VF61 e envia uma mensagem para cada mbed.
 
