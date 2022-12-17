@@ -133,7 +133,7 @@ Serial  toradex(USBTX, USBRX);  // tx, rx
 Para este projeto foram utilizadas duas placas MBED LPC1768, sendo que para cada pata são necessários dois motores para lidar com o movimento horizontal e vertical, totalizando 12 servomotores no projeto. Desta forma, cada MBED fica responsável pelo controle de 6 motores, ou seja, 3 pernas, já que cada placa possui 6 pinos de controle PWM.
 
 <p align="center">
-<img src="./Imagens/lpc1768_pinout.png" width ="400" >
+<img src="./Imagens/lpc1768_pinout.png" width ="700" >
 </p>
 
 A lógica de caminhada consiste no movimento de 3 patas por vez, sendo elas alternadas (2 nas pontas de um lado e 1 no meio do outro lado), de forma que as outras 3 permaneçam no chão durante esse tempo. Esse padrão de caminhada foi adotado devido a semelhança com a movimentação de insetos que também possuém 6 patas e por permitir uma maior estabilidade do robô.
@@ -163,19 +163,21 @@ perna1.pulsewidth(0.0017);
 Dessa forma, a lógica estabelecida verifica a possibilidade de leitura da porta Serial e ao rebecer uma mensagem, verifica em qual estado o robô se encontra, andando ou estático, e alterna entre esses estados a cada vez que tem uma chamada na porta Serial.
 
 <p align="center">
-<img src="./Imagens/máquina_de_estados_mbed.jpg" width ="400" >
+<img src="./Imagens/máquina_de_estados_mbed.jpg" width ="700" >
 </p>
 
 # Resultados
 
 Inicialmente, foram realizados testes com o robô movendo as pernas em cima de um suporte para evitar a possibilidade do robô quebrar ou ser danificado durante a execução do movimento por possiveis erros na elaboração do sistema embarcado.
 
-https://user-images.githubusercontent.com/119769311/207974322-b9b8b9bb-30bd-4893-a7dd-93c34144b0fc.mp4
-
+<p align="center">
+<https://user-images.githubusercontent.com/119769311/207974322-b9b8b9bb-30bd-4893-a7dd-93c34144b0fc.mp4 >
+</p>
 Posteriormente, quando os resultados no suporte se mostraram satisfatórios, colocamos ele no chão e o teste definitivo foi feito (sem a comunicação serial com a Toradex, apenas para verificação do funcionamento do padrão de caminhada).
 
-https://user-images.githubusercontent.com/119769311/207929898-81dae449-8cf5-42a6-8e74-0f024d8560f7.mp4
-
+<p align="center">
+<https://user-images.githubusercontent.com/119769311/207929898-81dae449-8cf5-42a6-8e74-0f024d8560f7.mp4 >
+</p>
 
 # Conclusão
 Apesar do projeto ter sido bem sucedido, vale ressaltar que a comunicação serial não fazia parte da ideia inicial, uma vez que, ao se trabalhar com MBEDs, é melhor usar o protocolo CAN para a comunicação, pois permite que outros dispositivos sejam conectados na mesma rede. Contudo, conforme apontado anteriormente, não foi possível a implementação desse tipo de comunicação, devido a falta de experiência da equipe com um protocolo tão robusto juntamente com o tempo limitado para tal. Portanto, optou-se pela comunicação serial, por sua simplicidade, permitindo a realização do projeto proposto e dando a oportunidade de trabalhar com sistemas embarcados, logo, pode-se afirmar que o objetivo acadêmico da disciplina foi alcançado.
