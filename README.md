@@ -27,7 +27,7 @@ Utilizou-se um sistema de hardware, o qual consiste em uma placa Toradex Colibri
 
 <p align="center">
 <img src="./Imagens/Módulo Colibri VF61.jpeg" width ="405">
-<img src="./Imagens/Placa Viola e MicroSD.jpeg" width="295">
+<img src="./Imagens/Placa Viola e MicroSD.jpeg" width="300">
 </p>
 
 <p align="center">
