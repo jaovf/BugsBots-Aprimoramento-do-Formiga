@@ -26,8 +26,8 @@ Desenvolver o acionamento e a coordenação de múltiplos servo atuadores de aer
 Utilizou-se um sistema de hardware, o qual consiste em uma placa Toradex Colibri VF61 embarcada na Viola Carrier Board e dois microcontroladores MBED LPC1768 pela proximidade dos membros do grupo com o laboratório Liepo do Professor Dr. Daniel Varela Magalhães, logo conseguimos esses itens emprestados para o projeto de implementação de caminhada para o robô Formiga. Além disso, foi necessário uma Carrier Board Iris, um cartão micro SD e um cabo de adaptador serial RS232 para USB-A para instalação do sistema operacional na Toradex Colibri VF61, o qual utilizamos o Linux (Ubuntu no host e Angstrom na Colibri). Já as linguagens de programação foram Python (VF61) e C++ (MBED). Por fim, foram usados 2 servos motores em cada perna, totalizando 12 em todo no robô.
 
 <p align="center">
-<img src="./Imagens/Módulo Colibri VF61.jpeg" width ="400">
-<img src="./Imagens/Placa Viola e MicroSD.jpeg" width="300">
+<img src="./Imagens/Módulo Colibri VF61.jpeg" width ="405">
+<img src="./Imagens/Placa Viola e MicroSD.jpeg" width="295">
 </p>
 
 <p align="center">
