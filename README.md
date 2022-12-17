@@ -114,11 +114,11 @@ Além disso, vale mencionar que a comunicação serial pela Colibri VF61 foi pos
 Dessa forma, implementamos um código simples em python que acessa as portas seriais USB da Colibri VF61 e envia uma mensagem para cada mbed.
 
 ```
-     ser1 = serial.Serial("/dev/serial/by-id/usb-mbed_Microcontroller_101000000000000000000002F7F0C7A2-if01")
-     ser2 = serial.Serial("/dev/serial/by-id/usb-mbed_Microcontroller_101000000000000000000002F7F1EA94-if01")
+ser1 = serial.Serial("/dev/serial/by-id/usb-mbed_Microcontroller_101000000000000000000002F7F0C7A2-if01")
+ser2 = serial.Serial("/dev/serial/by-id/usb-mbed_Microcontroller_101000000000000000000002F7F1EA94-if01")
 
-     ser1.write(1)
-     ser2.write(1)
+ser1.write(1)
+ser2.write(1)
 ```
 
 Já na mbed, especificamos a porta serial utilizada (USB Serial), por meio da identificação no código e dentro do loop da função principal era verificado a disponibilidade de leitura dessa porta que ao receber uma mensagem acionava o restante do código.
