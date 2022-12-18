@@ -148,14 +148,10 @@ Uma vez que esse movimento é intercalado, cada MBED está conectada a um conjun
 // PWM pins
 PwmOut  coxa1(p21);
 PwmOut  perna1(p22);
-
 ...
-
 coxa1.period(0.020);
 perna1.period(0.020);
-
 ...
-
 coxa1.pulsewidth(0.0013);
 perna1.pulsewidth(0.0017);
 ```
