@@ -121,15 +121,11 @@ Já na mbed, especificamos a porta serial utilizada (USB Serial), por meio da id
 ```
 // Serial port
 Serial  toradex(USBTX, USBRX);  // tx, rx
-
 ...
-
      while(1) {
 
           if (toradex.readable()) {
-
-          ....
-
+          ...
           }
 ```
 
